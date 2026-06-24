@@ -1,0 +1,22 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, system-ui, sans-serif;
+  background: #0a2240;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button, select, input, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator { opacity: 0.5; }
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+* { -webkit-tap-highlight-color: transparent; }
