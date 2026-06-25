@@ -25,7 +25,7 @@ function defaultForm(userId) {
   return { type:'meeting',title:'',date:TODAY,time:'',location:'',entity:DIRS[dir]?.entity||'APML',assignees:[dir],priority:'medium',reminder:'1h' }
 }
 
-const BG={background:`radial-gradient(ellipse at 15% 15%,rgba(21,101,168,0.45),transparent 55%),radial-gradient(ellipse at 85% 10%,rgba(43,166,164,0.3),transparent 50%),radial-gradient(ellipse at 85% 85%,rgba(133,79,11,0.25),transparent 55%),radial-gradient(ellipse at 10% 85%,rgba(153,53,86,0.22),transparent 50%),linear-gradient(160deg,#06112a 0%,#0c2040 50%,#081828 100%)`}
+const BG={background:'#f0f4f8'}
 
 export default function App() {
   const [loggedIn, setLoggedIn]   = useState(false)
