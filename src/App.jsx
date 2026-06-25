@@ -10,7 +10,7 @@ import ProfileScreen  from './components/ProfileScreen.jsx'
 import AddEntrySheet  from './components/AddEntrySheet.jsx'
 
 const TODAY = toISO(new Date())
-const WORKER_CONFIGURED = !!import.meta.env.VITE_WORKER_URL
+const WORKER_CONFIGURED = true
 
 // ─── Nav icons ────────────────────────────────────────────────────────────────
 const ICONS = {
