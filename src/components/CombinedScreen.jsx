@@ -58,7 +58,7 @@ export default function CombinedScreen({ entries, combDate, combFilter, onFilter
   const isToday = combDate===today
 
   return (
-    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column' }}>
+    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column', background:'#f0f4f8' }}>
       <div style={TOP_BAR}>
         <div>
           <div style={{ fontSize:'18px', fontWeight:'700' }}>Combined view</div>
@@ -77,7 +77,7 @@ export default function CombinedScreen({ entries, combDate, combFilter, onFilter
         </div>
       </div>
 
-      <div style={{ flex:1, minHeight:0, overflowY:'auto' }}>
+      <div style={{ flex:1, minHeight:0, overflowY:'auto' , background:'#f0f4f8' }}>
         {/* Week strip */}
         <WeekStrip combDate={combDate} entries={entries} onSelDate={onGoToday} today={today}/>
 

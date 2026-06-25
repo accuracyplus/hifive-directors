@@ -63,7 +63,7 @@ export default function EntryDetailSheet({ entry, curUser, onClose, onSave, onSt
       {/* Sheet — slides up from bottom */}
       <div style={{
         position:'absolute', bottom:0, left:0, right:0,
-        background:'rgba(248,250,253,0.96)',
+        background:'#f8fafc',
         backdropFilter:'blur(30px) saturate(180%)',
         WebkitBackdropFilter:'blur(30px) saturate(180%)',
         borderRadius:'24px 24px 0 0',

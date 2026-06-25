@@ -66,7 +66,7 @@ export default function ProfileScreen({ curUser, waNumber, onWaChange, onChangeP
   )
 
   return (
-    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column' }}>
+    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column', background:'#f0f4f8' }}>
       <div style={TOP_BAR}><div style={{ fontSize:'18px', fontWeight:'700' }}>Profile</div></div>
 
       <div style={{ flex:1, minHeight:0, overflowY:'auto', padding:'26px 22px 96px' }}>

@@ -98,7 +98,7 @@ export default function CalendarScreen({ curUser, entries, monY, selDate, onPrev
   const isCurrentMonth = y===new Date().getFullYear()&&m===new Date().getMonth()
 
   return (
-    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column' }}>
+    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column', background:'#f0f4f8' }}>
       <div style={TOP_BAR}>
         <div>
           <div style={{ fontSize:'18px', fontWeight:'700' }}>My calendar</div>
@@ -110,7 +110,7 @@ export default function CalendarScreen({ curUser, entries, monY, selDate, onPrev
         </div>
       </div>
 
-      <div style={{ flex:1, minHeight:0, overflowY:'auto' }}>
+      <div style={{ flex:1, minHeight:0, overflowY:'auto' , background:'#f0f4f8' }}>
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', padding:'14px 16px 8px' }}>
           <button onClick={onPrevMonth} style={ARROW_BTN}>‹</button>
           <div style={{ display:'flex', alignItems:'center', gap:'8px' }}>

@@ -37,7 +37,7 @@ export default function MyListScreen({ curUser, entries, listFilter, onFilter, o
   const overdueCount  = entries.filter(e=>e.status==='scheduled'&&e.date<today).length
 
   return (
-    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column' }}>
+    <div style={{ flex:1, minHeight:0, display:'flex', flexDirection:'column', background:'#f0f4f8' }}>
       <div style={TOP_BAR}>
         <div>
           <div style={{ fontSize:'18px', fontWeight:'700' }}>My assignments</div>
@@ -60,7 +60,7 @@ export default function MyListScreen({ curUser, entries, listFilter, onFilter, o
 
       {listFilter==='upcoming'&&<div style={{ padding:'4px 16px 8px', fontSize:'11px', color:'#9a958a' }}>← Swipe left on scheduled entries to complete or cancel</div>}
 
-      <div style={{ flex:1, minHeight:0, overflowY:'auto', padding:'6px 16px 96px' }}>
+      <div style={{ flex:1, minHeight:0, overflowY:'auto', padding:'6px 16px 96px' , background:'#f0f4f8' }}>
         {listGroups.length>0 ? listGroups.map(group=>(
           <div key={group.label} style={{ marginBottom:'22px' }}>
             <div style={{ fontSize:'11px', fontWeight:'700', color:'#9a958a', textTransform:'uppercase', letterSpacing:'.05em', marginBottom:'10px' }}>{group.label}</div>
