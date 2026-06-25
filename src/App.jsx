@@ -25,7 +25,7 @@ function defaultForm(userId) {
   return { type:'meeting',title:'',date:TODAY,time:'',location:'',entity:DIRS[dir]?.entity||'APML',assignees:[dir],priority:'medium',reminder:'1h' }
 }
 
-const BG={background:`radial-gradient(120% 80% at 0% 0%,rgba(21,101,168,.16),transparent 58%),radial-gradient(110% 70% at 100% 4%,rgba(43,166,164,.15),transparent 55%),radial-gradient(120% 85% at 100% 100%,rgba(201,162,74,.13),transparent 60%),radial-gradient(100% 80% at 0% 100%,rgba(153,53,86,.10),transparent 60%),linear-gradient(180deg,#f5f7fc,#eef1f8)`}
+const BG={background:`radial-gradient(ellipse at 15% 15%,rgba(21,101,168,0.45),transparent 55%),radial-gradient(ellipse at 85% 10%,rgba(43,166,164,0.3),transparent 50%),radial-gradient(ellipse at 85% 85%,rgba(133,79,11,0.25),transparent 55%),radial-gradient(ellipse at 10% 85%,rgba(153,53,86,0.22),transparent 50%),linear-gradient(160deg,#06112a 0%,#0c2040 50%,#081828 100%)`}
 
 export default function App() {
   const [loggedIn, setLoggedIn]   = useState(false)
@@ -159,7 +159,7 @@ export default function App() {
     setSelDate(TODAY);setEntries([]);setDetailEntry(null);setAdminPin('')
   }
 
-  const navBtnStyle=id=>({flex:1,display:'flex',flexDirection:'column',alignItems:'center',gap:'3px',padding:'9px 0 7px',background:'none',border:'none',cursor:'pointer',fontSize:'10px',fontWeight:'600',color:tab===id?'#1565a8':'#9a958a',position:'relative'})
+  const navBtnStyle = id => `hf-nav-btn${tab===id?' active':''}`
 
   return (
     <div style={{minHeight:'100vh',...BG,display:'flex',justifyContent:'center',alignItems:'flex-start'}}>
@@ -181,10 +181,9 @@ export default function App() {
               {detailEntry&&<EntryDetailSheet entry={detailEntry} curUser={selUser} onClose={()=>setDetailEntry(null)} onSave={handleDetailSave} onStatusChange={handleStatusChange}/>}
             </div>
 
-            {/* Bottom nav */}
-            <div style={{display:'flex',background:'rgba(255,255,255,0.70)',backdropFilter:'blur(24px) saturate(180%)',WebkitBackdropFilter:'blur(24px) saturate(180%)',borderTop:'1px solid rgba(255,255,255,0.6)',boxShadow:'0 -8px 30px -12px rgba(11,34,64,0.18)',flexShrink:0}}>
+            <div className="hf-nav">
               {TABS.map(t=>(
-                <button key={t.id} onClick={()=>setTab(t.id)} style={navBtnStyle(t.id)}>
+                <button key={t.id} onClick={()=>setTab(t.id)} className={navBtnStyle(t.id)} style={{position:'relative'}}>
                   {ICONS[t.id]}
                   <span>{t.label}</span>
                   {t.id==='calendar'&&todayCount>0&&<div style={{position:'absolute',top:'6px',right:'calc(50% - 14px)',background:'#c0392b',color:'#fff',borderRadius:'8px',fontSize:'9px',fontWeight:'700',padding:'1px 5px',minWidth:'14px',textAlign:'center'}}>{todayCount}</div>}
