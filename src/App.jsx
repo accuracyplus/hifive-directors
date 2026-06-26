@@ -109,11 +109,24 @@ export default function App() {
   const handleBack = useCallback(()=>{setAuthErr('');setPin(p=>p.slice(0,-1))},[])
   const handleSelectUser = useCallback(id=>{setSelUser(id);setPin('');setAuthErr('')},[])
 
-  // Biometric success — skip PIN, load entries as that user
-  async function handleBiometricSuccess(userId) {
+  // Biometric success — bio verified, use saved PIN to authenticate with Worker
+  async function handleBiometricSuccess(userId, savedPin) {
     setSelUser(userId)
-    setLoggedIn(true)
-    setPin('')
+    setAuthBusy(true)
+    try {
+      const res = await authLogin(userId, savedPin)
+      if (res.ok) {
+        if (res.wa) setWaNumber(res.wa)
+        setLoggedIn(true)
+        setPin('')
+      } else {
+        setAuthErr('Biometric PIN mismatch — please use PIN')
+      }
+    } catch(e) {
+      setAuthErr(e.message || 'Login failed.')
+    } finally {
+      setAuthBusy(false)
+    }
   }
 
   async function attemptLogin(user, enteredPin) {
